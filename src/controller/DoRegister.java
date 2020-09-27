@@ -12,14 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import model.Customer;
 import service.CustomerService;
 
+/**
+ * Servlet implementation class DoLogin
+ */
 @WebServlet("/doRegister")
 public class DoRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public DoRegister() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
@@ -27,8 +37,8 @@ public class DoRegister extends HttpServlet {
 		String name = request.getParameter("name");
 		String gender = request.getParameter("gender");
 		String email = request.getParameter("email");
-
-		Customer customer = new Customer(id,password,name,gender,email);
+		
+		Customer customer = new Customer(id, password, name, gender, email);
 		CustomerService service = (CustomerService) CustomerService.getInstance();
 		service.addCustomer(customer);
 		
@@ -38,8 +48,5 @@ public class DoRegister extends HttpServlet {
 		request.setAttribute("customer", customer);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 		dispatcher.forward(request, response);
-		
-		
 	}
-
 }

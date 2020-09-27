@@ -47,15 +47,4 @@ public class CustomerService {
 		}	
 		return null;
 	}
-	public Customer register(Customer customer) {
-	
-	//Customer cur_customer = findCustomer(customer.getId());
-
-	//if(cur_customer == null) {
-			addCustomer(customer);
-			System.out.println("register success");
-			return customer;
-	//}	
-//	return null;
-	}
 }
