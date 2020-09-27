@@ -46,6 +46,7 @@ public class DoRegister extends HttpServlet {
 		
 		page ="/view/registerSuccess.jsp";
 		request.setAttribute("customer", customer);
+			
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 		dispatcher.forward(request, response);
 	}
